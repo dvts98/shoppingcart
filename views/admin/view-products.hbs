@@ -1,0 +1,37 @@
+
+<section>
+
+    <div class="container mt-3">
+        
+<a href="/admin/add-product" class="btn btn-success me-auto">Add Product</a>
+      
+        <table class="table mt-5">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Title</th>
+      <th scope="col">Category</th>
+      <th scope="col">Description</th>
+      <th scope="col">Image</th>
+      <th scope="col">EDIT</th>
+      <th scope="col">DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+    {{#each products}}
+    <tr>
+     
+      <th scope="row" >{{inc @index}}</th>
+      <td>{{this.Name}}</td>
+      <td>{{this.Category}}</td>
+      <td>{{Description}}</td>
+      <td><img src="/product-images/{{this._id}}.jpg" style="width:50px ;height:50px;" alt=""></td>
+      <td><a href="/admin/edit-product/{{this._id}}" class="btn btn-primary">Edit</a></td>
+       <td><a href="/admin/delete-product/{{this._id}}" class="btn btn-danger" onclick="return confirm('Are You Want To Delete {{this.Name}}?')">Delete</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+    </div>
+</section>
